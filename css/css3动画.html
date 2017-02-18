@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+        <title>动画</title>
+    <style>
+        div{
+                 width:100px;
+                 height:100px;
+                 background-color:red;
+                 position:relative;
+                 animation: anim 5s;
+                 -webkit-animation:anim 5s;
+                 -ms-animation:anim 5s;
+                 -moz-animation:anim 5s;
+                 -o-animation:anim 5s;
+        }
+        @keyframes anim{
+                0%{background:red; left:0px; top:0px}
+                25%{background:blue; left:200px; top:0px}
+                50%{background:#ccffcc; left:200px; top:200px}
+                75%{background:#00ffff; left:0px; top:200px}
+                100%{background:red; left:0px; top:0px}
+        }
+        @-webkit-keyframes anim{
+                0%{background:red; left:0px; top:0px}
+                25%{background:blue; left:200px; top:0px}
+                50%{background:#ccffcc; left:200px; top:200px}
+                75%{background:#00ffff; left:0px; top:200px}
+                100%{background:red; left:0px; top:0px}
+        }
+        @-ms-keyframes anim{
+                0%{background:red; left:0px; top:0px}
+                25%{background:blue; left:200px; top:0px}
+                50%{background:#ccffcc; left:200px; top:200px}
+                75%{background:#00ffff; left:0px; top:200px}
+                100%{background:red; left:0px; top:0px}
+        }
+        @-moz-keyframes anim{
+                0%{background:red; left:0px; top:0px}
+                25%{background:blue; left:200px; top:0px}
+                50%{background:#ccffcc; left:200px; top:200px}
+                75%{background:#00ffff; left:0px; top:200px}
+                100%{background:red; left:0px; top:0px}
+        }
+        @-o-keyframes anim{
+                0%{background:red; left:0px; top:0px}
+                25%{background:blue; left:200px; top:0px}
+                50%{background:#ccffcc; left:200px; top:200px}
+                75%{background:#00ffff; left:0px; top:200px}
+                100%{background:red; left:0px; top:0px}
+        }
+    </style>
+</head>
+<body>
+    <div>keyframes示例</div>
+</body>
+</html>

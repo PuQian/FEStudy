@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Animation</title>
+  <style>
+    div{
+        width:100px;
+        height:100px;
+          background-color:#00ffff;
+    }
+    /*移动：参数分别为宽度和高度的偏移*/
+    /*.div2{ 
+        transform:translate(200px,100px);
+        -webkit-transform:translate(200px,100px);/*特指chrome,safari样式，对于chrome,safari优先级最高*/
+    /*    -ms-transform:translate(200px,100px);  /*IE  360也使用IE内核*/
+    /*    -o-transform:translate(200px,100px);  /*opera*/
+    /*    -moz-transform:translate(200px,100px);  /*Firefox*/
+    /*}
+    /*旋转：参数为旋转的角度*/
+    /*.div2{ 
+        transform:rotate(100deg);
+        -webkit-transform:rotate(100deg);
+        -ms-transform:rotate(100deg);
+        -o-transform:rotate(100deg);
+        -moz-transform:rotate(100deg);
+    }
+    /*缩放：参数分别为宽度和高度的缩放倍数*/
+    /*.div2{ 
+        margin-top:200px;   /*将前后两个div分开*/
+        /*transform:scale(1,2);
+        -webkit-transform:scale(1,2);
+        -ms-transform:scale(1,2);
+        -o-transform:scale(1,2);
+        -moz-transform:scale(1,2);
+    }*/
+    /*倾斜：参数分别为x轴和y轴的倾斜角度*/
+    /*.div2{      
+        transform:skew(20deg,20deg);
+        -webkit-transform:skew(20deg,20deg);
+        -ms-transform:skew(20deg,20deg);
+        -o-transform:skew(20deg,20deg);
+        -moz-transform:skew(20deg,20deg);
+    }*/
+    /*3D效果*/
+    .div2{      
+        transform:rotateX(120deg);
+        -webkit-transform:rotateX(120deg);
+        -ms-transform:rotateX(120deg);
+        -o-transform:rotateX(120deg);
+        -moz-transform:rotateX(120deg);
+    }
+  </style>
+</head>
+<body>
+  <div>初始效果</div>
+  <br>
+  <div class="div2">改变后的效果</div>
+</body>
+</html>
