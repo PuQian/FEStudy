@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水平垂直居中</title>
+	<style>
+		.parentOne, .parentTwo, .parentThree, .parentFour{
+			border: 1px solid #222;
+			width: 200px;
+			height: 200px;
+		}
+		.childOne, .childTwo, .childThree, .childFour{
+			background-color: #ddd;
+		}
+
+		/* 已知高度和宽度的元素居中法一 */
+		.parentOne{
+			position: relative;
+		}
+		.childOne{
+			position: absolute;
+			width: 100px;
+			height: 100px; 
+			top: 50%;
+			left: 50%;
+			margin-top: -50px;  /* 值为高度宽度值的一半*/
+			margin-left: -50px;
+		}
+
+		/* 已知高度和宽度的元素居中法二*/
+		.parentTwo{
+			position: relative;
+		}
+		.childTwo{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			margin: auto;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		/* 未知高度和宽度的元素水平垂直居中法一*/
+		.parentThree{
+			position: relative;
+		}
+		.childThree{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		/* 未知高度和宽度的元素水平垂直居中法二*/
+		.parentFour{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="parentOne">
+		<div class="childOne">childOne</div>
+	</div>
+
+	<div class="parentTwo">
+		<div class="childTwo">childTwo</div>
+	</div>
+
+	<div class="parentThree">
+		<div class="childThree">childThree</div>
+	</div>
+
+	<div class="parentFour">
+		<div class="childFour">childFour</div>
+	</div>
+</body>
+</html>

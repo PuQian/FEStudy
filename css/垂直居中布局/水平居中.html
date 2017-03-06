@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水平居中</title>
+	<style>
+		.childOne{
+			background-color: #fafafa;
+		}
+		.childTwo{
+			background-color: #eee;
+		}
+		.childThree{
+			background-color: #ccc;
+		}
+
+		/* 第一种方法设置多个块状元素水平居中*/
+		.parent{
+			text-align: center;
+			font-size: 0;
+		}
+		.childOne, .childTwo, .childThree{
+			display: inline-block;
+			font-size: 14px;
+		}
+
+		/* 第二种方法设置多个块状0元素水平居中（flexbox）*/
+		.parent{
+			display: flex;
+			justify-content: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="parent">
+		<div class="childOne">childOne</div>
+		<div class="childTwo">childTwo</div>
+		<div class="childThree">childThree</div>
+	</div>
+</body>
+</html>

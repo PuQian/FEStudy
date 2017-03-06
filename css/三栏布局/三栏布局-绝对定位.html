@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>三栏布局-绝对定位</title>
+	<style>
+		.left{
+			background-color: lightblue;
+		}
+		.middle{
+			background-color: lightgrey;
+		}
+		.right{
+			background-color: lightpink;
+		}
+		.parent{
+			position: relative;
+			width: 100%;
+			height: 100px;
+		}
+		.left, .middle, .right{
+			position: absolute;
+		}
+		.left{
+			width: 100px;
+			left: 0;
+			top: 0;
+			bottom: 0;  // 能够和父元素的高度保持一致（如果不设置父元素高度，则只有top和left有效）
+		}
+		.middle{
+			left: 100px;
+			top: 0;
+			right: 100px;
+			bottom: 0;
+		}
+		.right{
+			width: 100px;
+			right: 0;
+			top: 0;
+			bottom: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="parent">
+		<div class="left">left</div>
+		<div class="middle">middle</div>
+		<div class="right">right</div>
+	</div>
+</body>
+</html>

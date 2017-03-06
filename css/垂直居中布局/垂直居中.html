@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>垂直居中</title>
+	<style>
+		.parentOne{
+			border: 1px solid #ccc;
+			height: 200px;
+		}
+		.parentTwo{
+			border: 1px solid #2277da;
+			height: 300px;
+			margin-top: 10px;
+		}
+		.child{
+			background-color: #ccc;
+		}
+
+		/* 垂直居中：多行行内元素*/
+		.parentOne{
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		/* 垂直居中：已知高度的块状元素*/
+		.parentTwo{
+			position: relative;
+		}
+		.child{
+			height: 100px;
+			background-color: #ccc;
+			position: absolute;
+			top: 50%;
+			margin-top: -50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="parentOne">
+		<span class="inlineOne">inlineOneinlineOneinlineOne</span>
+		<span class="inlineTwo">inlineTwoinlineTwoinlineTwo</span>
+		<span class="inlineThree">inlineThreeinlineThreeinlineThree</span>
+		<span class="inlineFour">inlineFourinlineFourinlineFour</span>
+	</div>
+
+	<div class="parentTwo">
+		<div class="child">child</div>
+	</div>
+</body>
+</html>

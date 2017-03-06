@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双飞翼页面布局</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        #center, #left, #right{
+            float: left;
+        }
+        #center{
+            width: 100%;
+            background: lightblue;
+        }
+        #left{
+            background: lightgrey;
+            width: 15%;
+            margin-left: -100%;/*向左偏移自己的100% 回到上一行的开头*/
+        }
+        #right{
+            background: lightgrey;
+            width: 15%;
+            margin-left: -15%;/*向左偏移自己本身的长度   回到了上一行的末尾*/
+        }
+        #main-inner{
+            padding-left: 15%;/*回到自己的开头*/
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="center">
+            <!-- 与圣杯布局的不同之处 -->
+            <div id="main-inner">
+                center
+            </div>
+        </div>
+        <div id="left">
+            left
+        </div>
+        <div id="right">
+            right
+        </div>
+    </div>
+</body>
+</html>
