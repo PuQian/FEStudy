@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax请求</title>
+</head>
+<body>
+	<div class="ajax">ajax</div>
+	<script>
+		var ajax = document.querySelector('.ajax');
+		EventUtil.addEvent(ajax, 'click', handler)
+
+		EventUtil = {
+			addEvent: function(ele, type, handler){
+				if(ele.addEventListener) {
+					ele.addEventListener(type, handler, false);
+				}else if(ele.attachEvent) {
+					ele.attachEvent("on" + type, handler).call(this);
+				}else {
+					ele["on" + type] = handler;
+				}
+			}
+		}
+
+		var handler = function(){
+			ajax({
+				type: 'GET',
+				url: 'http://localhost:1234',
+				data:'',
+				success: function(data){
+					console.log(data);
+				}
+			});
+		}
+	</script>
+</body>
+</html>
