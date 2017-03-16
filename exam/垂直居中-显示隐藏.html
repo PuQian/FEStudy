@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>垂直居中 + 移动</title>
+	<style>
+		.green-box{
+			width: 100px;
+			height: 100px;
+			border: 2px solid green;
+			position: relative;
+		}
+		.red-box{
+			display: none;
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			margin: auto;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			border: 2px solid red;
+		}
+		/* 关键 */
+		.green-box:hover .red-box{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<!-- 题目描述：用纯 css 实现效果：红框在绿框中垂直居中，将鼠标移动到绿框中，红框显示；移出则红框消失 -->
+	<div class="green-box">
+		<div class="red-box"></div>
+	</div>
+</body>
+</html>

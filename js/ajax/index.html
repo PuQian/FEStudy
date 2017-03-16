@@ -8,9 +8,7 @@
 	<div class="ajax">ajax</div>
 	<script>
 		var ajax = document.querySelector('.ajax');
-		EventUtil.addEvent(ajax, 'click', handler)
-
-		EventUtil = {
+		var EventUtil = {
 			addEvent: function(ele, type, handler){
 				if(ele.addEventListener) {
 					ele.addEventListener(type, handler, false);
@@ -22,16 +20,34 @@
 			}
 		}
 
-		var handler = function(){
+		// var handler = function(){
+		// 	ajax({
+		// 		type: 'GET',
+		// 		url: 'http://localhost:1234/',
+		// 		data:'hah=1',
+		// 		success: function(data){
+		// 			console.log(data);
+		// 		}
+		// 	});
+		// }
+
+		// 发起 jsonp 请求
+		var handler = function() {
 			ajax({
-				type: 'GET',
 				url: 'http://localhost:1234',
-				data:'',
-				success: function(data){
-					console.log(data);
+				jsonp: 'jsonpCallback',   // 设置回调函数（在 ajax 中定义，之后调用 success函数）
+				data: {"type" : "jsonp"},
+				success: function(res) {
+					console.log(res);
+				},
+				error: function(error) {
+					console.log(error);
 				}
-			});
+			})
 		}
+
+		EventUtil.addEvent(ajax, 'click', handler);
 	</script>
+	<script src="ajax.js" type="text/javascript"></script>
 </body>
 </html>

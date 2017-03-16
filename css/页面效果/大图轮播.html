@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>大图轮播</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 600px;
+			position: relative;
+			height: 310px;
+			overflow: hidden;
+		}
+		ul{	
+			position: absolute;
+			list-style: none;
+			left: 0;
+			top: 0;
+			width: 1800px;
+		}
+		li{
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<ul>
+			<li><img src="waveOne.png" width="600" height="310"/></li>
+			<li><img src="waveTwo.png" width="600" height="310"/></li>
+			<li><img src="waveThree.png" width="600" height="310"/></li>
+		</ul>
+	</div>
+	<script>
+		var left = -600;
+		var hehe = setInterval(function(){
+			if(left == -1200) {
+				left = 0;
+			} else {
+				left -= 600;
+			}
+			animate(document.getElementsByTagName("ul")[0], left);
+		}, 1000);
+
+		var animate = function(ele, pos) {
+			clearInterval(hehe);
+			setTimeout(function(){
+				console.log(ele);
+				if(ele.style.left == ''){
+					var leftPos = 0;
+				}else{
+					var leftPos = parseInt(ele.style.left);
+				}
+				
+				console.log(leftPos);
+				console.log(pos);
+				if(leftPos < pos) {
+					leftPos++;
+				} else if (leftPos > pos) {
+					leftPos--;
+					console.log(leftPos);
+				} else {
+					hehe();
+				}
+				ele.style.left = leftPos + "px";
+				animate(ele, pos);
+			}, 13);
+		}
+	</script>
+</body>
+</html>

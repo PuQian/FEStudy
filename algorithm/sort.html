@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+	<button id="button">按钮</button>
+	<script src="sort.js"></script>
+	<script>
+		var A = [1, 4, 5, 12, 1, 2, 80];
+		insertSort(A);
+		console.log("插入排序结果:" + A);
+
+		var B = [1, 4, 5, 12, 1, 2, 80];
+		quickSort(B, 0, B.length - 1);
+		console.log("快速排序结果:" + B);
+
+		var C = [1, 4, 5, 12, 1, 2, 80];
+		mergeSort(C, 0 , C.length - 1);
+		console.log("二路归并排序结果:" + C);
+
+		// var D = [1, 4, 5, 12, 1, 2, 80];
+		// insertSort(D);
+		// console.log("插入排序结果:" + D);
+	</script>
+</body>
+</html>

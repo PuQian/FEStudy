@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画-移动的球</title>
+	<style>
+		.ball{
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+		}
+		.first{background-color: lightblue;}
+		.second{background-color: lightgrey;}
+		.third{background-color: lightpink;}
+	</style>
+	<script src="./node_modules/bluebird/js/browser/bluebird.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="first ball" style="margin-left: 0px;"></div>
+	<div class="second ball" style="margin-left: 0px;"></div>
+	<div class="third ball" style="margin-left: 0px;"></div>
+
+	<script>
+		function animate(ele, pos, cb) {
+			setTimeout(function(){
+				// 拿到的 marginLeft 是带单位的，所以要转换为数字
+				var marginLeft = parseInt(ele.style.marginLeft, 10); 
+
+				if(marginLeft < pos) {
+					marginLeft++;  // 数字加一（注意要机上单位）
+					ele.style.marginLeft = marginLeft + "px";
+					animate(ele, pos, cb);
+				}else{
+					cb && cb();
+				}}, 13);
+		}
+
+		var firstBall = document.querySelectorAll(".ball")[0];
+		var secondBall = document.querySelectorAll(".ball")[1];
+		var thirdBall = document.querySelectorAll(".ball")[2];
+
+		// 传统方式控制动画
+		// animate(firstBall, "100", function(){
+		// 	animate(secondBall, "200", function(){
+		// 		animate(thirdBall, "300", function(){
+		// 			console.log("animate end!");
+		// 		})
+		// 	})
+		// })
+
+		// promise 方法
+		var Promise = window.Promise;
+
+		function promiseAnimate(ele, pos) {
+			return new Promise(function(resolve, reject) {
+
+				function _animate() {
+					setTimeout(function(){
+						// 拿到的 marginLeft 是带单位的，所以要转换为数字
+						var marginLeft = parseInt(ele.style.marginLeft, 10); 
+
+						if(marginLeft < pos) {
+							marginLeft++;  // 数字加一（注意要机上单位）
+							ele.style.marginLeft = marginLeft + "px";
+							_animate();
+						}else{
+							resolve();
+						}
+					}, 13);
+				}
+
+				_animate();
+			})
+		}
+
+		promiseAnimate(firstBall, 100)
+			.then(function(){
+				return promiseAnimate(secondBall, 200)
+			})
+			.then(function(){
+				return promiseAnimate(thirdBall, 300)
+			})
+	</script>
+</body>
+</html>
