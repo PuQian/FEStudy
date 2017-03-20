@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scroll</title>
+	<style>
+		#box1{
+			width: 100px;
+			height: 20px;
+			background-color: lightblue;
+		}
+		#box2{
+			width: 100px;
+			height: 20px;
+			background-color: lightpink;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<script>
+		
+		var handler = function(e){
+			var top = e.wheelDelta/60;
+			var box1 = document.getElementById("box1");
+			var box2 = document.getElementById("box2");
+
+			if(e.wheelDelta > 0){
+				console.log("向上滚动");
+				Ele(box1, top * 2);
+				Ele(box2, top * 3);
+			}
+			if(e.wheelDelta < 0) {
+				console.log("向下滚动");
+				Ele(box1, top * 2);
+				Ele(box2, top * 3);
+			}
+		}
+
+		window.addEventListener("mousewheel", handler, false);
+
+		function Ele(ele, pos) {
+			ele.style.marginTop = parseInt(ele.style.marginTop || 0) + pos + "px";
+		}
+
+	</script>
+</body>
+</html>

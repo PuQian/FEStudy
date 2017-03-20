@@ -12,3 +12,5 @@ function insertUl(){
 	ul.innerHTML = lis;
 	document.body.appendChild(ul);
 }
+
+

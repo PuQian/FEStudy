@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹出层-蒙层</title>
+	<style>
+		#shadow{
+			display: none;
+			background-color: rgba(0,0,0,0.2);
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+		.menu{
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+<body>
+    <button onclick="menu();">弹出框</button>
+	<div class="menu">
+		<div class="title">标题<span>x</span></div>
+		<p>正文内容</p>
+	</div>
+	<div id="shadow"></div>
+	<script>
+		function menu(){
+			document.querySelector('.menu').style.display = "block";
+			document.querySelector('#shadow').style.display = "block";
+		}
+	</script>
+</body>
+</html>
